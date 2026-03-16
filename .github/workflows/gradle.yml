@@ -1,6 +1,30 @@
 name: CI
 
-on: [push, pull_request]
+permissions:
+  contents: write
+  
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+on: 
+  push:
+
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
 
 jobs:
 
