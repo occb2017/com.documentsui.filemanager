@@ -16,11 +16,7 @@ public class MainActivity extends Activity {
 
         intent.setAction(Intent.ACTION_VIEW);
         intent.setType("*/*");
-// A13 Go
-//      intent.setClassName("com.google.android.go.documentsui", "com.android.documentsui.files.FilesActivity");
-//com.android.documentsui/com.android.documentsui.files.FilesActivity
-// A12 Go
-        intent.setClassName("com.android.documentsui", "com.android.documentsui.files.FilesActivity");
+        intent.setClassName("com.google.android.documentsui", "com.android.documentsui.files.FilesActivity");
         startActivity(intent);
 
         if (Build.VERSION.SDK_INT >= 21) {
