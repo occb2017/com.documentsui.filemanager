@@ -37,7 +37,9 @@ jobs:
             -   uses: actions/checkout@v4
 
             -   name: Run debug build
-                run: ./gradlew assembleDebug
+                run: |
+                  gradle wrapper --gradle-version 7.4.1
+                  ./gradlew assembleDebug
 
             -   name: Upload artifact to GitHub
                 uses: actions/upload-artifact@v6
